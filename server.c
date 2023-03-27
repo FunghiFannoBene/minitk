@@ -51,9 +51,9 @@ int	main(void)
 	sigaddset(&sa.sa_mask, SIGUSR1);
 	sigaddset(&sa.sa_mask, SIGUSR2);
 	sa.sa_flags = SA_SIGINFO | SA_NODEFER;
-	sa.sa_sigaction = action;
-	sigaction(SIGUSR1, &sa, 0);
-	sigaction(SIGUSR2, &sa, 0);
+	sa.sa_sigaction = action; //assegna nome funzione.
+	sigaction(SIGUSR1, &sa, 0); //utilizza funzione action presente nel client dandogli questi parametri.
+	sigaction(SIGUSR2, &sa, 0); //utilizza funzione action presente nel client dandogli questi parametri.
 	while (1)
 		pause();
 	return (0);
