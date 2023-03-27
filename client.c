@@ -22,7 +22,7 @@ void	send_message(int pid, char c)
 	bit = 7;
 	while (bit >= 0)
 	{
-		if ((c >> bit) % 2 == 0)
+		if ((c >> bit) % 2 == 0) // c >> bit -------------------- c / 128 ---------------------- c / pow(2, bit) sono la stessa cosa. shifto a destra 7 posizioni quindi rimane solo l'ultimo.
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
