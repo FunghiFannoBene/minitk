@@ -1,0 +1,7 @@
+OK
+
+La scelta del valore di usleep dipende dalle specifiche esigenze del programma e dal contesto in cui viene utilizzato. Nel caso specifico della funzione send_message, il valore di usleep è stato impostato a 100 microsecondi per stabilire un tempo di latenza tra l'invio dei segnali SIGUSR1 e SIGUSR2.
+
+In linea di principio, un valore di 50 microsecondi potrebbe essere adeguato se la trasmissione dei dati non richiede una sincronizzazione particolarmente precisa tra i segnali. Tuttavia, un valore troppo basso potrebbe causare un sovraccarico del sistema o una perdita di dati. Al contrario, un valore troppo alto potrebbe rallentare la trasmissione dei dati, ma garantire una maggiore affidabilità nella trasmissione.
+
+In ogni caso, la scelta del valore di usleep dipende dalle specifiche esigenze del programma e deve essere valutata in base alle prestazioni e alla robustezza del sistema. Potrebbe essere utile eseguire alcuni test per trovare il valore ottimale di usleep in base alle esigenze specifiche del programma.

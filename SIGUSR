@@ -1,0 +1,20 @@
+OK
+
+Invece, signo rappresenta il numero del segnale ricevuto dal processo. Quando un processo riceve un segnale, il sistema operativo invia un valore numerico che rappresenta il segnale al gestore dei segnali associato al processo.
+
+Nel caso dell'esempio in cui viene gestito il segnale SIGUSR1, la funzione sig_handler() viene chiamata con un parametro signo pari a 10 quando il processo riceve il segnale SIGUSR1, poiché il valore numerico di SIGUSR1 è 10 sui sistemi POSIX-compatibili.
+
+Tuttavia, in generale, il valore di signo può variare in base al segnale ricevuto, e non è sempre uguale al valore numerico del segnale. Per questo motivo, la funzione sig_handler() utilizza la condizione signo == SIGUSR1 per verificare se il segnale ricevuto è effettivamente SIGUSR1.
+
+In generale, su molti sistemi POSIX-compatibili, come Linux e macOS, il valore numerico di SIGUSR2 è 12, anziché 20.
+
+In generale, i segnali SIGUSR1 e SIGUSR2 vengono utilizzati dai programmi per la comunicazione inter-processo (IPC) e per la sincronizzazione tra processi.
+
+Ad esempio, un programma può utilizzare SIGUSR1 o SIGUSR2 per segnalare ad un altro processo la disponibilità di un servizio, oppure per richiedere l'elaborazione di una specifica richiesta. Inoltre, i segnali SIGUSR1 e SIGUSR2 possono essere utilizzati per attivare funzionalità specifiche all'interno di un programma.
+
+Tuttavia, poiché i segnali SIGUSR1 e SIGUSR2 non hanno uno specifico significato predefinito nel sistema operativo, il loro utilizzo è lasciato alla discrezione del programmatore. Pertanto, il loro utilizzo può variare a seconda del contesto e delle specifiche esigenze del programma.
+
+
+La traduzione dei segnali SIGUSR1 e SIGUSR2 deve essere implementata dal server, che deve essere in grado di interpretare correttamente i segnali ricevuti e tradurli nel formato desiderato. In pratica, il server deve essere in grado di interpretare la sequenza di segnali SIGUSR1 e SIGUSR2 ricevuti come una sequenza di bit e tradurli nel formato corretto.
+
+In sintesi, i segnali SIGUSR1 e SIGUSR2 sono utilizzati per la trasmissione di dati tramite segnali, ma la loro interpretazione dipende dalla specifica implementazione del protocollo di comunicazione e deve essere implementata dal server.

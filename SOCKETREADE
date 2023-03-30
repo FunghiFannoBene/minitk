@@ -1,0 +1,13 @@
+SOCKET
+
+I socket sono un'interfaccia di programmazione del sistema operativo (API) per la comunicazione tra processi su una rete di computer.
+
+In particolare, un socket rappresenta un canale di comunicazione bidirezionale tra due processi, che possono essere in esecuzione sulla stessa macchina o su macchine diverse in una rete.
+
+Un processo può creare un socket e utilizzarlo per inviare e ricevere dati da altri processi, indipendentemente dal sistema operativo o dalla piattaforma hardware utilizzata dai processi.
+
+I socket sono utilizzati per implementare molti dei protocolli di rete comuni, come TCP, UDP, HTTP, FTP e altri, e sono una parte fondamentale delle applicazioni di rete come server web, client di posta elettronica, software di chat e così via.
+
+La programmazione dei socket richiede la conoscenza di alcuni concetti di base, come i diversi tipi di socket, l'indirizzamento IP e la gestione degli errori di rete.
+
+Tuttavia, la maggior parte dei linguaggi di programmazione moderni fornisce librerie standard per la gestione dei socket, che semplificano notevolmente la programmazione di applicazioni di rete complesse.

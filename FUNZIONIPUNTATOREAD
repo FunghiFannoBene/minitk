@@ -1,0 +1,32 @@
+sa_handler è un membro della struttura 
+struct sigaction ed è utilizzato per definire 
+l'handler del segnale. Può accettare una funzione come valore 
+poiché in C, le funzioni possono essere passate come puntatori.
+
+Quando si definisce un handler personalizzato per un 
+egnale utilizzando la funzione sigaction(), è possibile
+ assegnare una funzione come handler utilizzando il membro 
+ sa_handler della struttura struct sigaction. Ad esempio, 
+ la seguente istruzione assegna la funzione handle_sigint 
+ come handler per il segnale SIGINT:
+
+c
+Copy code
+struct sigaction sa;
+sa.sa_handler = handle_sigint;
+In questo caso, handle_sigint è una funzione definita dall'
+utente che verrà eseguita quando il processo riceve il segnale 
+SIGINT. In altre parole, sa_handler è utilizzato per specificare l'indirizzo della funzione che deve essere chiamata
+ quando viene ricevuto il segnale.
+
+Si noti che sa_handler è utilizzato solo per i segnali che hanno una gestione di segnale basata su un singolo handler. Per i segnali che supportano la gestione di segnale basata su due handler, come ad esempio SIGCHLD, 
+viene utilizzato il membro sa_sigaction per specificare la funzione che gestisce il segnale.
+
+
+struct sigaction {
+    void (*sa_handler)(int);
+    sigset_t sa_mask;
+    int sa_flags;
+    void (*sa_sigaction)(int, siginfo_t *, void *);
+};
+

@@ -1,0 +1,11 @@
+ok
+
+POSIX (Portable Operating System Interface) è uno standard per l'interfaccia di programmazione del sistema operativo (API) per sistemi operativi basati su Unix.
+
+L'obiettivo di POSIX è quello di garantire la compatibilità tra i sistemi operativi Unix e Unix-like, in modo che le applicazioni sviluppate per un sistema operativo possano essere facilmente portate su altri sistemi.
+
+POSIX definisce un insieme di interfacce standard per la gestione dei file, dei processi, dei segnali, dei thread, dei socket, della memoria, e altre funzionalità di base del sistema operativo.
+
+L'aderenza agli standard POSIX è importante per garantire la portabilità del codice tra i diversi sistemi operativi Unix e per garantire la compatibilità tra le diverse implementazioni di un sistema operativo.
+
+Inoltre, gli standard POSIX sono spesso richiesti o raccomandati dalle specifiche di molte applicazioni e librerie di terze parti, per garantire la compatibilità e la portabilità del codice su diversi sistemi operativi Unix.

@@ -1,0 +1,25 @@
+PID = ID del processo.
+si possonono mandare dei segnali all'indirizzo dell'ID del 
+processo per far partire una funzione.
+
+PID identifica un processo nel sistema operativo, IP identifica un host su una rete. 
+Utilizzo dipende dal contesto e dalle esigenze.
+
+Per implementare una chat tra due processi o due utenti su una rete, si potrebbe utilizzare sia i segnali che i dati, a seconda delle esigenze specifiche dell'applicazione.
+
+Esempio di utilizzo dei segnali:
+
+Se un utente sta scrivendo un messaggio in chat e riceve un messaggio in arrivo da un altro utente, il sistema potrebbe inviare un segnale al processo del client per notificare l'evento. Il processo del client potrebbe quindi interrompere l'input dell'utente e visualizzare il messaggio in arrivo. In questo caso, il segnale è utilizzato per la notifica asincrona di un evento.
+Esempio di utilizzo dei dati:
+
+Per inviare un messaggio di chat tra due processi o utenti, si potrebbe utilizzare un socket per inviare i dati contenenti il messaggio dal processo del client al processo del server, che lo invierà al destinatario corretto. In questo caso, i dati sono utilizzati per la comunicazione sincrona di informazioni strutturate (il messaggio di chat) tra i processi.
+In generale, la scelta tra l'utilizzo di segnali o di dati dipende dalle esigenze specifiche dell'applicazione. I segnali sono utilizzati per la notifica asincrona di eventi o azioni, mentre i dati sono utilizzati per la comunicazione sincrona di informazioni strutturate o non strutturate tra processi o thread.
+
+
+in molti casi il sistema operativo o altri processi possono inviare segnali ad un processo per notificare l'occorrenza di un evento o di un'azione specifica.
+
+Ad esempio, il sistema operativo può inviare un segnale ad un processo quando il processo ha utilizzato troppa memoria o quando sta per scadere il tempo di esecuzione del processo.
+
+Inoltre, altri processi possono inviare segnali ad un processo per notificare l'occorrenza di eventi specifici, come la ricezione di un messaggio o la richiesta di terminare il processo.
+
+In generale, i segnali sono utilizzati per notificare eventi o azioni asincrone tra i processi e possono essere utilizzati per gestire lo stato dei processi, controllare l'esecuzione dei processi o gestire l'interazione tra i processi.

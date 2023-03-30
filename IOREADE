@@ -1,0 +1,11 @@
+GG INPUT OUTPUT
+
+L'I/O (Input/Output) si riferisce alle operazioni di ingresso e uscita di dati tra un sistema informatico e il mondo esterno, come dispositivi di input (tastiere, mouse) o dispositivi di output (monitor, stampante).
+
+In pratica, l'I/O rappresenta il modo in cui un programma o un sistema interagisce con l'ambiente esterno, in modo da ricevere input e fornire output.
+
+L'I/O può essere suddiviso in diverse categorie, come l'I/O a blocchi (lettura/scrittura di blocchi di dati da un dispositivo di storage come un hard disk), l'I/O a caratteri (lettura/scrittura di caratteri da/verso un dispositivo di input/output) e l'I/O di rete (lettura/scrittura di dati su una rete di computer).
+
+La gestione dell'I/O è una parte fondamentale della programmazione e richiede la conoscenza di tecniche come la sincronizzazione, la gestione degli errori e l'utilizzo di buffer di I/O per migliorare le prestazioni del sistema.
+
+La maggior parte dei linguaggi di programmazione moderni fornisce librerie standard per la gestione dell'I/O, che semplificano notevolmente la programmazione di applicazioni che utilizzano l'I/O.
