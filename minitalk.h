@@ -10,8 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+#ifndef MINITALK_H
+# define MINITALK_H
+
+# include "ft_printf/ft_printf.h"
+# include <errno.h>
+# include <signal.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+int		ft_atoi(const char *str);
+void	message(int pid, char c);
+void	go(int signum, siginfo_t *info, void *ucontext);
+
+#endif

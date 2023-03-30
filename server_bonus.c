@@ -1,16 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/29 04:49:29 by marvin            #+#    #+#             */
+/*   Updated: 2023/03/29 04:49:29 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "minitalk.h"
 
-//funzione sigaction() viene utilizzata per registrare la funzione action come gestore di 
-//segnale per i segnali specificati,
-//e il valore del segnale viene passato come primo argomento della funzione sigaction().
-
-void go(int signum, siginfo_t *info, void *ucontext) //prende valori dalla funzione KILL del client/server
+void	go(int signum, siginfo_t *info, void *ucontext)
 {
 	static int	c_bit;
-	static char	c; //le statiche hanno un valore di 0 se non assegnateli un valore, oppure il valore successivo residuo.
-	(void) ucontext; //casto void perchè è un parametro non usato ma presente e obbligatorio.
+	static char	c;
 
+	(void)ucontext;
 	if (c_bit < 8)
 	{
 		c = c << 1;
@@ -33,17 +40,18 @@ void go(int signum, siginfo_t *info, void *ucontext) //prende valori dalla funzi
 	kill(info->si_pid, SIGUSR2);
 }
 
-int main()
+int	main(void)
 {
-	printf("Server Process ID: %d\n", getpid());
-	struct sigaction s_action;
+	struct sigaction	s_action;
+
+	ft_printf("Server Process ID: %d\n", getpid());
 	sigemptyset(&s_action.sa_mask);
 	sigaddset(&s_action.sa_mask, SIGUSR1);
 	sigaddset(&s_action.sa_mask, SIGUSR2);
 	s_action.sa_flags = SA_SIGINFO | SA_NODEFER;
-	s_action.sa_sigaction = go; //assegna nome funzione.
-	sigaction(SIGUSR1, &s_action, 0); //utilizza funzione action presente nel client dandogli questi parametri.
-	sigaction(SIGUSR2, &s_action, 0); //utilizza funzione action presente nel client dandogli questi parametri.
+	s_action.sa_sigaction = go;
+	sigaction(SIGUSR1, &s_action, 0);
+	sigaction(SIGUSR2, &s_action, 0);
 	while (1)
 		pause();
 	return (0);
